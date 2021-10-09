@@ -17,7 +17,7 @@ $(document).ready(function() {
         name: " Home Team Wins",
         "type": 'bar',
         marker: {
-            color: "green"
+            color: "mediumblue"
 
         }
     }
@@ -26,10 +26,10 @@ $(document).ready(function() {
     let trace2 = {
         "x": data.map(x=> x.NICKNAME),
         "y": data.map(x=> x.HOME_TEAM_LOSS),
-        name: " Home Team loses",
+        name: " Home Team Losses",
         "type": 'bar',
         marker: {
-            color: "gray"
+            color: "firebrick"
         }
     };
 
