@@ -47,3 +47,12 @@ $(document).ready(function() {
 
     });
 });
+
+function updateChartType() {
+    // here we destroy/delete the old or previous chart and redraw it again
+    myChart.destroy();
+    myChart = new Chart(ctx, {
+        type: document.getElementById("chartType").value,
+        data: myData,
+    });
+};

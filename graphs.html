@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>NBA</title>
+    <title>Graphs</title>
 
     <!-- Bring in our bootstrap stylesheet -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -16,7 +16,7 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="demo.js"></script>
-    <script src=" https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></script>
     <script ref="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sandstone/bootstrap.min.css"></script>
@@ -58,47 +58,54 @@
                         <a class="nav-link" href="multigraph.html">Visualizations</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="map.html">Map</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="datatable.html">Data Table</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="Conclusion.html">Conclusion</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="References.html">References</a>
                     </li>
-                    
-                </ul>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="container-fluid d-flex justify-content-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>2018 Season Stats</h1>
+                </div>
             </div>
         </div>
-    </nav>
-    <!-- <div id="bar"></div>
-    <div id="bar2"></div> -->
-    <div class="container-fluid d-flex justify-content-center">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>NBA 2018 Season</h1>
+        <div class="container-fluid d-flex justify-content-center">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card border-primary mb-3" style="max-width: 20rem;">
+                        <div class="card-header">Filters</div>
+                        <div class="card-body">
+                            <div id="filters">
+                                <select id="metric_filter" onchange="updateChartType()">
+                                    <option value="PTS">Team Total Points</option>
+                                    <option value="HOME_TEAM_WINS">Number of Wins per City</option>
+                                    <!-- <option value="length">Movie Length</option> -->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container-fluid d-flex justify-content-center">
-        <div class="row">
-            <div class="col-md-12">
-                <a href="#", target="_blank"></a><img height=100% width=100%  src="NBA.png">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="plot"></div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container-fluid d-flex justify-content-center">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Steven Green</h2>
-                <h2>Kidist Gebremedhin</h2>
-                <h2>Thi Quang</h2>
-            </div>
-        </div>
-    </div>
+
+
+
+    <div id="bar"></div>
+    <div id="bar2"></div>
+    <div id="plot"></div>
 </body>
 
 </html>

@@ -5,21 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>NBA</title>
+    <title>Multiple Graphs</title>
 
     <!-- Bring in our bootstrap stylesheet -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sandstone/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css">
 
     <!-- Javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="demo.js"></script>
-    <script src=" https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></script>
-    <script ref="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sandstone/bootstrap.min.css"></script>
+    <script src="teams.js"></script>
+    <script src="plot.js"></script>
+
 
 </head>
 
@@ -69,36 +69,52 @@
                     <li class="nav-item">
                         <a class="nav-link" href="References.html">References</a>
                     </li>
-                    
-                </ul>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-    <!-- <div id="bar"></div>
-    <div id="bar2"></div> -->
+        </nav>
+
+    
+
+    
     <div class="container-fluid d-flex justify-content-center">
         <div class="row">
             <div class="col-md-12">
-                <h1>NBA 2018 Season</h1>
+                <h1>NBA Stats: Season 2018</h1>
             </div>
         </div>
     </div>
     <div class="container-fluid d-flex justify-content-center">
         <div class="row">
             <div class="col-md-12">
-                <a href="#", target="_blank"></a><img height=100% width=100%  src="NBA.png">
+                <div class="card border-primary mb-3" style="max-width: 20rem;">
+                    <div class="card-header">Filters</div>
+                    <div class="card-body">
+                        <div id="filters">
+                            <select id="metric_filter">
+                                <option value="PTS">Total Points per Team</option>
+                                <option value="HOME_TEAM_WINS">Number of Home Team Wins</option>
+                                <option value="HOME_TEAM_LOSS">Number of Home Team Losses</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid d-flex justify-content-center">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <h2>Steven Green</h2>
-                <h2>Kidist Gebremedhin</h2>
-                <h2>Thi Quang</h2>
+                <div id="plot"></div>
             </div>
         </div>
     </div>
+
+
+
+    <div id="bar"></div>
+    <div id="bar2"></div>
+    <div id="plot"></div>
 </body>
 
 </html>

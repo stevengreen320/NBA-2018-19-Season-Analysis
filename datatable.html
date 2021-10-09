@@ -21,6 +21,19 @@
     <script href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></script>
     <script ref="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/sandstone/bootstrap.min.css"></script>
 
+    <meta charset="utf-8">
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 2px black solid;
+            font: 12px sans-serif;
+        }
+        td {
+            border: 1px black solid;
+            padding: 5px;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -58,9 +71,6 @@
                         <a class="nav-link" href="multigraph.html">Visualizations</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="map.html">Map</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="datatable.html">Data Table</a>
                     </li>
                     <li class="nav-item">
@@ -74,31 +84,35 @@
             </div>
         </div>
     </nav>
-    <!-- <div id="bar"></div>
-    <div id="bar2"></div> -->
-    <div class="container-fluid d-flex justify-content-center">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>NBA 2018 Season</h1>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid d-flex justify-content-center">
-        <div class="row">
-            <div class="col-md-12">
-                <a href="#", target="_blank"></a><img height=100% width=100%  src="NBA.png">
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid d-flex justify-content-center">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Steven Green</h2>
-                <h2>Kidist Gebremedhin</h2>
-                <h2>Thi Quang</h2>
-            </div>
-        </div>
-    </div>
-</body>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Data</h1>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-12">
+                <p>The following table includes all of the data used for plotting during this project.</p>
+            </div>
+        </div>
+    </div>
+
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script type="text/javascript"charset="utf-8">
+            d3.text("teams_city.csv", function(data) {
+                var parsedCSV = d3.csv.parseRows(data);
+                var container = d3.select("body")
+                    .append("table")
+                    .selectAll("tr")
+                        .data(parsedCSV).enter()
+                        .append("tr")
+                    .selectAll("td")
+                        .data(function(d) { return d; }).enter()
+                        .append("td")
+                        .text(function(d) { return d; });
+            });
+        </script>
+    </body>
 </html>
