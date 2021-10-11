@@ -43,7 +43,10 @@ $(document).ready(function() {
         var traces4 = [{
             "x": data.map(x => x.PLAYER_NAME).slice(0, 10),
             "y": data.map(x => x.player_impact_estimate),
-            "type": 'bar'
+            "type": 'bar',
+            marker: {
+                color: "firebrick"
+            }
 
         }];
 
